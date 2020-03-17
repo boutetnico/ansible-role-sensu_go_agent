@@ -1,0 +1,5 @@
+---
+- name: Restart Sensu agent
+  service:
+    name: sensu-agent
+    state: restarted

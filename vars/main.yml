@@ -1,0 +1,10 @@
+---
+sensu_agent_apt_key: https://packagecloud.io/sensu/stable/gpgkey
+
+sensu_agent_apt_repositories:
+  - deb https://packagecloud.io/sensu/stable/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release | lower }} main
+  - deb-src https://packagecloud.io/sensu/stable/{{ ansible_distribution | lower }}/ {{ ansible_distribution_release | lower }} main
+
+sensu_agent_package_name: sensu-go-agent
+
+sensu_agent_config_file: /etc/sensu/agent.yml

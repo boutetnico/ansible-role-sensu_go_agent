@@ -1,0 +1,33 @@
+---
+- name: Install dependencies
+  apt:
+    name: "{{ sensu_agent_dependencies }}"
+    state: present
+
+- name: Add Sensu APT key
+  apt_key:
+    state: present
+    url: "{{ sensu_agent_apt_key }}"
+
+- name: Manage Sensu APT repositories
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  loop: "{{ sensu_agent_apt_repositories }}"
+
+- name: Install Sensu agent
+  apt:
+    name: "{{ sensu_agent_package_name }}"
+    state: "{{ sensu_agent_package_state }}"
+
+- name: Install Sensu agent configuration
+  template:
+    src: agent.yml.j2
+    dest: "{{ sensu_agent_config_file }}"
+  notify: Restart Sensu agent
+
+- name: Ensure Sensu agent is started and starts on boot
+  service:
+    enabled: true
+    name: sensu-agent
+    state: started
