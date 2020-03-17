@@ -3,6 +3,12 @@ ansible-role-sensu-go-agent
 
 This role installs and configures [Sensu Agent](https://docs.sensu.io/sensu-go/latest/reference/agent/).
 
+It is part of a family of Ansible roles allowing to setup and configure Sensu Go components:
+
+- [ansible-role-sensu-go-agent](https://github.com/boutetnico/ansible-role-sensu-go-agent)
+- [ansible-role-sensu-go-cli](https://github.com/boutetnico/ansible-role-sensu-go-cli)
+- [ansible-role-sensu-go-backend](https://github.com/boutetnico/ansible-role-sensu-go-backend)
+
 Requirements
 ------------
 
