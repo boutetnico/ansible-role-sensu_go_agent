@@ -4,6 +4,11 @@
     name: "{{ sensu_agent_dependencies }}"
     state: present
 
+- name: Install extra packages
+  apt:
+    name: "{{ sensu_agent_extra_packages }}"
+    state: present
+
 - name: Add Sensu APT key
   apt_key:
     state: present
