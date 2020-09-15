@@ -23,6 +23,7 @@ def test_extra_packages_are_installed(host, name):
     package = host.package(name)
     assert package.is_installed
 
+
 @pytest.mark.parametrize('name', [
   ('adm'),
 ])
