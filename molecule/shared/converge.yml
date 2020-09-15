@@ -3,3 +3,5 @@
   hosts: all
   roles:
     - role: ansible-role-sensu-go-agent
+      sensu_agent_extra_packages:
+        - sysstat

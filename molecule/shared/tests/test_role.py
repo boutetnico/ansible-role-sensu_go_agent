@@ -16,6 +16,14 @@ def test_packages_are_installed(host, name):
     assert package.is_installed
 
 
+@pytest.mark.parametrize('name', [
+  ('sysstat'),
+])
+def test_extra_packages_are_installed(host, name):
+    package = host.package(name)
+    assert package.is_installed
+
+
 @pytest.mark.parametrize('file,user,group,mode,content', [
   ('/etc/sensu/agent.yml', 'root', 'root', 0o644, 'backend-url'),
 ])
