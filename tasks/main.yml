@@ -32,6 +32,14 @@
     src: agent.yml.j2
   notify: Restart Sensu agent
 
+- name: Ensure sensu user belongs to its additional groups
+  user:
+    append: true
+    groups: "{{ sensu_agent_user_extra_groups }}"
+    name: sensu
+    state: present
+  when: sensu_agent_user_extra_groups | length > 0
+
 - name: Ensure Sensu agent is started and starts on boot
   service:
     enabled: true
