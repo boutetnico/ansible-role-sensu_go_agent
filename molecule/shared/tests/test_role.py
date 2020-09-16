@@ -29,7 +29,7 @@ def test_extra_packages_are_installed(host, name):
 ])
 def test_user_belongs_to_its_additional_groups(host, name):
     user = host.user('sensu')
-    assert user.contains(name)
+    assert name in user.groups
 
 
 @pytest.mark.parametrize('file,user,group,mode,content', [
