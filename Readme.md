@@ -25,12 +25,13 @@ Supported Platforms
 Role Variables
 --------------
 
-| Variable                     | Required | Default                       | Choices   | Comments                                       |
-|------------------------------|----------|-------------------------------|-----------|------------------------------------------------|
-| sensu_agent_dependencies     | true     | `[apt-transport-https,gnupg]` | list      |                                                |
-| sensu_agent_extra_packages   | true     | `[]`                          | list      |                                                |
-| sensu_agent_package_state    | true     | `present`                     | string    | Use  `latest` to upgrade.                      |
-| sensu_agent_config           | true     |                               | dict      | Configuration object, see `defaults/main.yml`. |
+| Variable                      | Required | Default                       | Choices   | Comments                                       |
+|-------------------------------|----------|-------------------------------|-----------|------------------------------------------------|
+| sensu_agent_dependencies      | true     | `[apt-transport-https,gnupg]` | list      |                                                |
+| sensu_agent_extra_packages    | true     | `[]`                          | list      |                                                |
+| sensu_agent_package_state     | true     | `present`                     | string    | Use  `latest` to upgrade.                      |
+| sensu_agent_user_extra_groups | true     | `[]`                          | list      | Agent's user secondary groups.                 |
+| sensu_agent_config            | true     |                               | dict      | Configuration object, see `defaults/main.yml`. |
 
 Dependencies
 ------------

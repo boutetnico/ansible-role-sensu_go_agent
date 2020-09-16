@@ -5,3 +5,5 @@
     - role: ansible-role-sensu-go-agent
       sensu_agent_extra_packages:
         - sysstat
+      sensu_agent_user_extra_groups:
+        - adm
