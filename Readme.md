@@ -1,3 +1,6 @@
+[![tests](https://github.com/boutetnico/ansible-role-sensu-go-agent/workflows/Test%20ansible%20role/badge.svg)](https://github.com/boutetnico/ansible-role-sensu-go-agent/actions?query=workflow%3A%22Test+ansible+role%22)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-boutetnico.sensu_go_agent-blue.svg)](https://galaxy.ansible.com/boutetnico/sensu_go_agent)
+
 ansible-role-sensu-go-agent
 ===========================
 
@@ -12,7 +15,7 @@ It is part of a family of Ansible roles allowing to setup and configure Sensu Go
 Requirements
 ------------
 
-Ansible 2.6 or newer.
+Ansible 2.7 or newer.
 
 Supported Platforms
 -------------------
