@@ -24,6 +24,8 @@
   apt:
     name: "{{ sensu_agent_package_name }}"
     state: "{{ sensu_agent_package_state }}"
+    update_cache: true
+  notify: Restart Sensu agent
 
 - name: Install Sensu agent configuration
   template:
