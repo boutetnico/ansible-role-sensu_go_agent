@@ -1,6 +1,7 @@
 ---
 galaxy_info:
-  role_name: sensu-go-agent
+  role_name: sensu_go_agent
+  namespace: boutetnico
   author: Nicolas Boutet
   description: Install and configure Sensu Go agent.
   license: MIT
