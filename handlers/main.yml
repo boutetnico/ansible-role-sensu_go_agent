@@ -1,5 +1,5 @@
 ---
 - name: Restart Sensu agent
-  service:
+  ansible.builtin.service:
     name: sensu-agent
     state: restarted
