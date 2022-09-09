@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   roles:
-    - role: ansible-role-sensu-go-agent
+    - role: boutetnico.sensu_go_agent
       sensu_agent_extra_packages:
         - sysstat
       sensu_agent_user_extra_groups:
