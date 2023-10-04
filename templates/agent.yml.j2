@@ -1,6 +1,6 @@
 ---
 # {{ ansible_managed }}
 
-{% if sensu_agent_config %}
-{{ sensu_agent_config | to_nice_yaml }}
+{% if sensu_go_agent_config %}
+{{ sensu_go_agent_config | to_nice_yaml }}
 {% endif %}
