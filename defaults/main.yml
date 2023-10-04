@@ -1,14 +1,14 @@
 ---
-sensu_agent_dependencies:
+sensu_go_agent_dependencies:
   - apt-transport-https
   - gnupg
 
-sensu_agent_extra_packages: []
+sensu_go_agent_extra_packages: []
 
-sensu_agent_package_state: present
+sensu_go_agent_package_state: present
 
-sensu_agent_user_extra_groups: []
+sensu_go_agent_user_extra_groups: []
 
-sensu_agent_config:
+sensu_go_agent_config:
   backend-url:
     - ws://127.0.0.1:8081

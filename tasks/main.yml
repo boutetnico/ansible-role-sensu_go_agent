@@ -1,35 +1,35 @@
 ---
 - name: Install dependencies
   ansible.builtin.apt:
-    name: "{{ sensu_agent_dependencies }}"
+    name: "{{ sensu_go_agent_dependencies }}"
     state: present
 
 - name: Install extra packages
   ansible.builtin.apt:
-    name: "{{ sensu_agent_extra_packages }}"
+    name: "{{ sensu_go_agent_extra_packages }}"
     state: present
 
 - name: Add Sensu APT key
   ansible.builtin.apt_key:
     state: present
-    url: "{{ sensu_agent_apt_key }}"
+    url: "{{ sensu_go_agent_apt_key }}"
 
 - name: Manage Sensu APT repositories
   ansible.builtin.apt_repository:
     repo: "{{ item }}"
     state: present
-  loop: "{{ sensu_agent_apt_repositories }}"
+  loop: "{{ sensu_go_agent_apt_repositories }}"
 
 - name: Install Sensu agent
   ansible.builtin.apt:
-    name: "{{ sensu_agent_package_name }}"
-    state: "{{ sensu_agent_package_state }}"
+    name: "{{ sensu_go_agent_package_name }}"
+    state: "{{ sensu_go_agent_package_state }}"
     update_cache: true
   notify: Restart Sensu agent
 
 - name: Install Sensu agent configuration
   ansible.builtin.template:
-    dest: "{{ sensu_agent_config_file }}"
+    dest: "{{ sensu_go_agent_config_file }}"
     mode: "0644"
     src: agent.yml.j2
   notify: Restart Sensu agent
@@ -37,10 +37,10 @@
 - name: Ensure sensu user belongs to its additional groups
   ansible.builtin.user:
     append: true
-    groups: "{{ sensu_agent_user_extra_groups }}"
+    groups: "{{ sensu_go_agent_user_extra_groups }}"
     name: sensu
     state: present
-  when: sensu_agent_user_extra_groups | length > 0
+  when: sensu_go_agent_user_extra_groups | length > 0
 
 - name: Ensure Sensu agent is started and starts on boot
   ansible.builtin.service:
